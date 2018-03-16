@@ -2,9 +2,8 @@ class Product < ApplicationRecord
   
   validates :name, presence: true
   validates :price, presence: true
-  validates :name, uniquesness: true
+  validates :name, uniqueness: true
   validates :price, numericality: { greater_than: 0 }
-  end
 
   def as_json
     {
@@ -17,8 +16,6 @@ class Product < ApplicationRecord
       total: total 
     }
   end
-
-  item
 
   def is_discounted
     price < 2
