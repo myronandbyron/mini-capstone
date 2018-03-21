@@ -1,8 +1,11 @@
 class Product < ApplicationRecord
-  
+  belongs_to :users
+  ###? :orders
+
+
   validates :name, presence: true
-  validates :price, presence: true
   validates :name, uniqueness: true
+  validates :price, presence: true
   validates :price, numericality: { greater_than: 0 }
 
   def as_json
