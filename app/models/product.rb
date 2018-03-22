@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :users
-  ###? :orders
+  has_many :orders
 
 
   validates :name, presence: true
@@ -12,24 +12,22 @@ class Product < ApplicationRecord
     {
       name: name,
       price: price,
-      item_url: item_url,
+      image_url: image_url,
       description: description,
-      is_discounted: is_discounted?,
-      tax: tax,
-      total: total 
+      supplier_id: supplier_id
     }
   end
 
-  def is_discounted
-    price < 2
-  end
+#   def is_discounted
+#     price < 2
+#   end
 
-  def tax
-    price * 0.09
-  end
+#   def tax
+#     price * 0.09
+#   end
 
-  def total
-    item + sales_tax
-  end
+#   def total
+#     item + sales_tax
+#   end
 
 end

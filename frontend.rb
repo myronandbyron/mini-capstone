@@ -21,9 +21,14 @@ response = Unirest.post("localhost:3000/user_token",
   }
 )
 
-# jwt = response.body["jwt"]
+jwt = response.body["jwt"]
 
-# Unirest.default_header("Authorization", "Bearer #{jwt}")
+Unirest.default_header("Authorization", "Bearer #{jwt}")
+
+response = Unirest.post("localhost:3000/all-products",
+puts JSON.pretty_generate(response.body)
+
+
 
 # jwt = ""
 # Unirest.clear_default_headers()
