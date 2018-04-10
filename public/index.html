@@ -49,6 +49,12 @@
             </form>
           </div>
         </nav>
+
+        <div class="row">
+          
+
+        </div>
+
         <h1>Index</h1>
 
         <!-- product1 -->
@@ -64,6 +70,7 @@
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="index.js" defer></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -72,6 +79,17 @@
   </body>
 </html>
 
-<template>
-  
+<template id="item-card">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">A Thing!</h2>
+        <h4>Seller: J$</h4>
+        <img src="http://www.birdfeedersspot.com/images/duckling-1596730_960_720.jpg" width="200px">
+        <p class="card-text">Buy this</p>
+        <p class="card-text">NOW</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
 </template>
