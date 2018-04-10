@@ -1,15 +1,24 @@
 Rails.application.routes.draw do
-  namespace :v1 do
-    post '/user_token' => 'user_token#create'
+  
+    post 'user_token' => 'user_token#create'
 
-    get '/all-products' => 'products#index'
-    post '/product' => 'products#create'
-    get '/products/:id' => 'products#show'
-    patch 'products/:id' => 'products#update'
-    delete 'products/:id' => 'products#destroy'
+    namespace :v1 do
 
+        post 'users' => 'users#create'
 
+        get 'all-products' => 'products#index'
+        post 'products' => 'products#create'
+        get 'products/:id' => 'products#show'
+        patch 'products/:id' => 'products#update'
+        delete 'products/:id' => 'products#destroy'
 
-    post '/users' => 'users#create'
-  end
+        get 'all-orders' => 'orders#index'
+        post 'orders' => 'orders#create'
+        get 'orders/:id' => 'orders#show'
+        patch 'orders/:id' => 'orders#update'
+        delete 'orders/:id' => 'orders#destroy'
+
+        post 'carted_products' => 'carted_products#create'
+        get 'all-carted_products' => 'carted_products#index'
+    end
 end
