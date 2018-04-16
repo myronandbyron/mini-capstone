@@ -2,20 +2,21 @@ class V1::ProductsController < ApplicationController
   before_action :authenticate_admin, except: [:index, :show, :destroy]
   
   def index
-    p * 50
-    p current_user
-    p * 50
+    # p * 50
+    # p current_user
+    # p * 50
 
-    sort_by_price = params[:sort_price]
+    # sort_by_price = params[:sort_price]
 
-    if sort_by_price == 'true'
-      products = Product.order(:price).where("name LIKE ?", "%#{search_term}%")
-    else
-      products = Product.order(:id).where("name LIKE ?", "%#{search_term}%")
-    end
+    # if sort_by_price == 'true'
+    #   products = Product.order(:price).where("name LIKE ?", "%#{search_term}%")
+    # else
+    #   products = Product.order(:id).where("name LIKE ?", "%#{search_term}%")
+    # end
 
+    products = Product.all
     render json: products.as_json
-    # products = Product.all
+    
     # render json: products.as_json
   end
 
